@@ -87,7 +87,7 @@ endif
 # No dedicated Recovery image (in vendor_boot)
 TARGET_NO_RECOVERY := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
-BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
+
 
 # Kernel - dtbo
 BOARD_KERNEL_SEPARATED_DTBO := true
