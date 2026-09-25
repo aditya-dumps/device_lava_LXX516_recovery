@@ -122,9 +122,13 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-# SELinux Permissive (Debugging Only)
-BOARD_BOOTCONFIG += androidboot.selinux=permissive
+# Bootconfig
+BOARD_BOOTCONFIG += \
+    androidboot.hardware=ums9621_1h10 \
+    androidboot.dtbo_idx=0 \
+    androidboot.selinux=permissive
 BOARD_RECOVERY_SELINUX_PERMISSIVE := true
+
 
 # Ramdisk compression
 BOARD_RAMDISK_USE_LZ4 := true
