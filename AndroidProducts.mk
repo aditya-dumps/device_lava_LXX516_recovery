@@ -6,9 +6,11 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_LXX516.mk
+    $(LOCAL_DIR)/twrp_LXX516.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_LXX516-user \
-    omni_LXX516-userdebug \
-    omni_LXX516-eng
+    twrp_LXX516-user \
+    twrp_LXX516-userdebug \
+    twrp_LXX516-eng \
+    twrp_LXX516-ap2a-eng \
+    twrp_LXX516-ap2a-userdebug

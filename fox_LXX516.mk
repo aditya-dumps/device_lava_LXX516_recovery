@@ -18,32 +18,29 @@
 # 	Please maintain this if you use this script or any part of it
 #
 
-# screen settings
-# e.g. if the aspect ratio is 19:9 then use 19*120 (=2280)
-
-# make file for LXX516 
+# make file for LXX516
 # OF variable file
-#
 
- # change it so your name should show in the about page.
+# Maintainer
 OF_MAINTAINER := 🔥IQ_HARRY_07🔥
 
-
-# Skip Decryption (to prevent from stucking on OrangeFox splash screen! don't remove unless you're sure that you're going to work on Decryption!)
-
+# Skip Decryption for initial bringup (FBEv2 on Android 15)
 OF_SKIP_FBE_DECRYPTION := 1
 
-# Screen settings - specified values from beryl. change if you found any issue (ONLY IF YOU FOUND ANY ISSUE!)
-
-OF_SCREEN_H := 2400
-OF_STATUS_H := 100
+# Screen settings (verified from device: 720x1600, density 320, top cutout 66px)
+OF_SCREEN_H := 1600
+OF_STATUS_H := 70
 OF_STATUS_INDENT_LEFT := 48
 OF_STATUS_INDENT_RIGHT := 48
 OF_ALLOW_DISABLE_NAVBAR := 0
 OF_CLOCK_POS := 1
 OF_OPTIONS_LIST_NUM := 9
 
-# No Dedicated Recovery partition 
+# Display & Backlight
+OF_BRIGHTNESS_PATH := "/sys/class/backlight/sprd_backlight/brightness"
+OF_MAX_BRIGHTNESS := 255
+
+# No Dedicated Recovery partition (recovery in vendor_boot)
 OF_AB_DEVICE_WITH_RECOVERY_PARTITION := 0
 
 # automatically wipe /metadata after data format
@@ -52,12 +49,5 @@ OF_WIPE_METADATA_AFTER_DATAFORMAT := 1
 # lz4 compression
 OF_USE_LZ4_COMPRESSION := 1
 
-# Called just before formatting /data; only useful for devices/ROMs that have dynamic partitions
+# Called just before formatting /data; useful for devices with dynamic partitions
 OF_USE_DMCTL := 1
-
-# Set this to 1 if your device uses aidl (as opposed to hidl) to handle boot control, particularly changing slots
-OF_USE_AIDL_BOOT_CONTROL := 1
-
-# Set this to 1 if your device uses aidl (as opposed to hidl) to handle boot control, particularly changing slots
-OF_USE_AIDL_BOOT_CONTROL := 1
-
