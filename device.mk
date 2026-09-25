@@ -32,6 +32,10 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 # Building vendor_boot
 PRODUCT_BUILD_SUPER_PARTITION := false
 
+# Prebuilt DTB copy
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/prebuilt/dtb.img:dtb.img
+
 # API Level (fox_14.1 tree target 34)
 PRODUCT_SHIPPING_API_LEVEL := 34
 PRODUCT_TARGET_VNDK_VERSION := 34
