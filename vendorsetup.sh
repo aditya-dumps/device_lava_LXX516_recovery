@@ -48,6 +48,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_TARGET_DEVICES="LXX516"
     
     export FOX_AB_DEVICE=1
+    export FOX_VIRTUAL_AB_DEVICE=1
     export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
     export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
     

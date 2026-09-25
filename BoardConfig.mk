@@ -161,3 +161,11 @@ TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
 
 # Haptics
 TW_NO_HAPTICS := true
+
+# Brightness
+TW_MAX_BRIGHTNESS := 255
+TW_DEFAULT_BRIGHTNESS := 150
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/sprd_backlight/brightness"
+
+# Virtual A/B
+ENABLE_VIRTUAL_AB := true
