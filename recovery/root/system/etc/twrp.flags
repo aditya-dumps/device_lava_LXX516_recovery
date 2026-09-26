@@ -1,0 +1,47 @@
+# TWRP-specific flags for Lava Shark 5G (LXX516)
+# Extends the Android-format /system/etc/recovery.fstab by mount point.
+# Dynamic super partitions are managed natively by recovery.fstab.
+
+## Bootloader / firmware
+/spl                  emmc   /dev/block/mmcblk0boot0             flags=display=spl;slotselect
+/spl_bk               emmc   /dev/block/mmcblk0boot1             flags=display=spl_bk
+/uboot                emmc   /dev/block/by-name/uboot            flags=display=uboot;slotselect
+/sml                  emmc   /dev/block/by-name/sml              flags=display=sml;slotselect
+/tos                  emmc   /dev/block/by-name/trustos          flags=display=tos;slotselect
+/teecfg               emmc   /dev/block/by-name/teecfg           flags=display=teecfg;slotselect
+/vbmeta               emmc   /dev/block/by-name/vbmeta           flags=display=vbmeta;slotselect;flashimg
+/vbmeta_system        emmc   /dev/block/by-name/vbmeta_system    flags=display=vbmeta_system;slotselect;flashimg
+/vbmeta_vendor        emmc   /dev/block/by-name/vbmeta_vendor    flags=display=vbmeta_vendor;slotselect;flashimg
+/dtbo                 emmc   /dev/block/by-name/dtbo             flags=display=dtbo;slotselect;flashimg
+/vendor_boot          emmc   /dev/block/by-name/vendor_boot      flags=display=vendor_boot;slotselect;flashimg
+
+## Modem / DSP
+/ltedsp               emmc   /dev/block/by-name/l_ldsp           flags=display=ltedsp;slotselect
+/ltegdsp              emmc   /dev/block/by-name/l_gdsp           flags=display=ltegdsp;slotselect
+/lteagdsp             emmc   /dev/block/by-name/l_agdsp          flags=display=lteagdsp;slotselect
+/ltecdsp              emmc   /dev/block/by-name/l_cdsp           flags=display=ltecdsp;slotselect
+/ltemodem             emmc   /dev/block/by-name/l_modem          flags=display=ltemodem;slotselect
+/ltefixnv1            emmc   /dev/block/by-name/l_fixnv1         flags=display=ltefixnv1
+/ltefixnv2            emmc   /dev/block/by-name/l_fixnv2         flags=display=ltefixnv2
+/ltedeltanv           emmc   /dev/block/by-name/l_deltanv        flags=display=ltedeltanv;slotselect
+/lteruntimenv1        emmc   /dev/block/by-name/l_runtimenv1     flags=display=lteruntimenv1
+/lteruntimenv2        emmc   /dev/block/by-name/l_runtimenv2     flags=display=lteruntimenv2
+/wcnmodem             emmc   /dev/block/by-name/wcnmodem         flags=display=wcnmodem;slotselect
+/gnssmodem            emmc   /dev/block/by-name/gnssmodem        flags=display=gnssmodem;slotselect
+/pmsys                emmc   /dev/block/by-name/pm_sys           flags=display=pmsys;slotselect
+
+## Boot control
+/misc                 emmc   /dev/block/by-name/misc
+/boot                 emmc   /dev/block/by-name/boot             flags=display=boot;slotselect;flashimg
+/persist              emmc   /dev/block/by-name/persist          flags=display=persist
+/logo                 emmc   /dev/block/by-name/logo             flags=display=logo
+/fbootlogo            emmc   /dev/block/by-name/fbootlogo        flags=display=fbootlogo
+
+## Super / data / misc mounts
+/super                emmc   /dev/block/by-name/super            flags=display=Super;flashimg
+/metadata             f2fs   /dev/block/by-name/metadata        flags=display=metadata
+/metadata             ext4   /dev/block/by-name/metadata        flags=display=metadata
+/data                 f2fs   /dev/block/by-name/userdata        flags=display=data
+/cache                ext4   /dev/block/by-name/cache           flags=display=cache
+/external_sd          auto   /dev/block/mmcblk1p1 /dev/block/mmcblk1 flags=display="MicroSD";storage;wipeingui;removable
+/usb_otg              auto   /dev/block/sdg1      /dev/block/sdg      flags=display="USB-OTG";storage;wipeingui;removable
