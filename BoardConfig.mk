@@ -11,7 +11,7 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT := cortex-a75
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
@@ -46,3 +46,7 @@ BOARD_SPRD_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor product
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 BOARD_HAS_NO_REAL_SDCARD := true
+
+# Kernel Command Line from Stock Boot
+BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8 loglevel=7 initcall_debug=0 printk.devkmsg=on
+BOARD_KERNEL_CMDLINE += androidboot.hardware=ums9621_1h10
