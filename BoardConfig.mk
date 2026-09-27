@@ -50,3 +50,12 @@ BOARD_HAS_NO_REAL_SDCARD := true
 # Kernel Command Line from Stock Boot
 BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8 loglevel=7 initcall_debug=0 printk.devkmsg=on
 BOARD_KERNEL_CMDLINE += androidboot.hardware=ums9621_1h10
+
+# Display & Graphics
+TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 2400
+OF_SCREEN_H := 2400
+OF_STATUS_H := 100
+OF_STATUS_INDENT_LEFT := 48
+OF_STATUS_INDENT_RIGHT := 48
+TW_THEME := portrait_hdpi
