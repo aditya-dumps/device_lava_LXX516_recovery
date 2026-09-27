@@ -59,3 +59,6 @@ OF_STATUS_H := 100
 OF_STATUS_INDENT_LEFT := 48
 OF_STATUS_INDENT_RIGHT := 48
 TW_THEME := portrait_hdpi
+
+# Touchscreen Modules
+TW_LOAD_VENDOR_MODULES := "focaltech_ft8756_spi_ts.ko focaltech_ft3680_spi_ts.ko synaptics_td4320_spi_ts.ko chipone_9916_ts.ko galaxycore_gc7272_spi_ts.ko"
