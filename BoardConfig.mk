@@ -68,3 +68,18 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl \
     android.hardware.boot@1.2-service \
     vendor.sprd.hardware.boot@1.2
+
+# Encryption & KeyMint
+OF_DEFAULT_KEYMASTER_VERSION := 41
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+
+TARGET_RECOVERY_DEVICE_MODULES += \
+    android.hardware.gatekeeper@1.0-service.trusty \
+    android.hardware.security.keymint@2.0-unisoc.service.trusty \
+    tsupplicant
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libtrusty.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libgatekeeper.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint.so
