@@ -1,0 +1,28 @@
+on early-init
+    start prepdecrypt
+
+service prepdecrypt /system/bin/prepdecrypt.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+service tsupplicant /vendor/bin/tsupplicant
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.trusty
+    user root
+    group root
+    capabilities WAKE_ALARM
+    disabled
+    seclabel u:r:recovery:s0
+
+service keymint-2-0 /vendor/bin/hw/android.hardware.security.keymint@2.0-unisoc.service.trusty
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
