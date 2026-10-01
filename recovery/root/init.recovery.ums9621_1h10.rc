@@ -17,7 +17,6 @@ service tsupplicant /vendor/bin/tsupplicant
 service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.trusty
     user root
     group root
-    capabilities WAKE_ALARM
     disabled
     seclabel u:r:recovery:s0
 
