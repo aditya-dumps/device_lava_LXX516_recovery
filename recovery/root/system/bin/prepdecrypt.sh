@@ -1,13 +1,27 @@
-#!/system/bin/sh
-# Probe for Trusty IPC interface
-count=0
-while [ $count -lt 30 ]; do
-    if [ -e /dev/trusty-ipc-dev0 ]; then
-        echo "prepdecrypt: /dev/trusty-ipc-dev0 is ready"
-        exit 0
+#!/sbin/sh
+# prepdecrypt.sh - wait for the trusty IPC nodes, then signal crypto.ready
+#
+# keymint and gatekeeper need the trusty modules TWRP loads through
+# TW_LOAD_VENDOR_BOOT_MODULES.
+
+LOG=/tmp/prepdecrypt.log
+exec > "$LOG" 2>&1
+
+TIMEOUT=30
+WAITED=0
+
+while [ $WAITED -lt $TIMEOUT ]; do
+    if ls /dev/trusty-ipc* 2>/dev/null | grep -q .; then
+        echo "trusty ready after ${WAITED}s"
+        break
     fi
-    sleep 0.1
-    count=$((count + 1))
+    sleep 1
+    WAITED=$((WAITED + 1))
 done
-echo "prepdecrypt: timed out waiting for trusty-ipc"
-exit 1
+
+if [ $WAITED -ge $TIMEOUT ]; then
+    echo "timed out waiting for /dev/trusty-ipc*"
+fi
+
+# let recovery know keystore/gatekeeper can start
+setprop crypto.ready 1
