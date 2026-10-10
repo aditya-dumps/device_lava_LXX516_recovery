@@ -1,5 +1,8 @@
 # OrangeFox Recovery Device Tree for Lava Shark 5G (LXX516)
 
+> [!NOTE]
+> **Special Acknowledgement**: Sincere gratitude to **[XTENSEI (アンドレイ)](https://github.com/XTENSEI)** for foundational work, device tree bringup architecture, Unisoc recovery references, and technical guidance throughout development.
+
 ```
 #
 # Copyright (C) 2026 The Android Open Source Project
@@ -32,9 +35,9 @@ This device tree is configured to be built remotely with [Actions-Build-OrangeFo
 - **Device Name**: `LXX516`
 - **Build Target**: `vendorboot`
 
-## Credits & Mentions
+## Credits & Special Thanks
 
-* **[TeamOrangeFox](https://gitlab.com/OrangeFox)** - For the OrangeFox Recovery Project
-* **[TWRP](https://github.com/TeamWin)** - For TWRP recovery base
-* **[XTENSEI](https://github.com/XTENSEI)** - For initial tree bringup, reference trees, and guidance
-* **Aditya** - Device tree bringup and automated FBE hardware decryption
+* **[XTENSEI (アンドレイ)](https://github.com/XTENSEI)** - Core device tree bringup architecture, initial configs, reference Unisoc recovery trees, and invaluable technical guidance.
+* **[TeamOrangeFox](https://gitlab.com/OrangeFox)** - For the OrangeFox Recovery Project and recovery sources.
+* **[TWRP Team](https://github.com/TeamWin)** - For TWRP base and recovery tools.
+* **Aditya (@aditya-dumps)** - Device tree maintenance, Trusty TEE stack, and automated FBE hardware decryption.
