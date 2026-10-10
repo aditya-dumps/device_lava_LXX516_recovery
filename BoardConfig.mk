@@ -1,7 +1,10 @@
 #
 # Copyright (C) 2026 The Android Open Source Project
+# Copyright (C) 2026 The TWRP Open Source Project
+# Copyright (C) 2026 TeamOrangeFox
 #
-# SPDX-License-Identifier: Apache-2.0
+# Special thanks and credits to XTENSEI (https://github.com/XTENSEI)
+# for initial device tree bringup and Unisoc recovery architecture.
 #
 
 DEVICE_PATH := device/lava/LXX516
