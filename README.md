@@ -1,13 +1,13 @@
 # OrangeFox Recovery Device Tree for Lava Shark 5G (LXX516)
 
-```
+`
 #
 # Copyright (C) 2026 The Android Open Source Project
 # Copyright (C) 2026 The OrangeFox Recovery Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-```
+`
 
 ## Device Specifications
 
@@ -25,9 +25,16 @@
 ## Build Instructions (GitHub Actions)
 
 This device tree is configured to be built remotely with [Actions-Build-OrangeFox](https://github.com/aditya-dumps/Actions-Build-OrangeFox):
-- **Manifest Branch**: `14.1`
-- **Device Tree**: `https://github.com/aditya-dumps/device_lava_LXX516_recovery.git`
-- **Device Branch**: `fox-14.1`
-- **Device Path**: `device/lava/LXX516`
-- **Device Name**: `LXX516`
-- **Build Target**: `vendorboot`
+- **Manifest Branch**: 14.1
+- **Device Tree**: https://github.com/aditya-dumps/device_lava_LXX516_recovery.git
+- **Device Branch**: ox-14.1
+- **Device Path**: device/lava/LXX516
+- **Device Name**: LXX516
+- **Build Target**: endorboot
+
+## Credits & Mentions
+
+* **[TeamOrangeFox](https://gitlab.com/OrangeFox)** - For the OrangeFox Recovery Project
+* **[TWRP](https://github.com/TeamWin)** - For TWRP recovery base
+* **[XTENSEI](https://github.com/XTENSEI)** - For initial tree bringup, reference trees, and guidance
+* **Aditya** - Device tree bringup and automated FBE hardware decryption
